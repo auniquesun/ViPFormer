@@ -1,0 +1,1 @@
+g++ -std=c++11 render_balls.cpp -o render_balls.so -shared -fPIC -O2 -D_GLIBCXX_USE_CXX11_ABI=0
