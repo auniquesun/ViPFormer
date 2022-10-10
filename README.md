@@ -1,6 +1,6 @@
 # ViPFormer
-This repository is the official implementation of ViPFormer,
-created by Hongyu Sun, Yongcai Wang, Xudong Cai, Xuewei Bai and Deying Li
+This repository is the official implementation of "ViPFormer: Efficient Vision-and-Pointcloud Transformer for Unsupervised Pointcloud Understanding",
+created by Hongyu Sun, Yongcai Wang, Xudong Cai, Xuewei Bai and Deying Li. 
 
 ![](assets/architecture.png)
 
@@ -31,6 +31,8 @@ extensive ablation studies.
 * pueue & pueued 2.0.4
 
 ### W&B Docker Setup
+We track the model training and fine-tuning with W&B tools. The official W&B tools may be slow and unstable since 
+they are on remote servers, we install the local version by running the following command.
 
 ```shell
   docker run --rm -d -v wandb:/vol -p 28282:8080 --name wandb-local wandb/local:0.9.41
@@ -65,14 +67,14 @@ ModelNet40, ScanObjectNN and ShapeNetPart.
 ```
   ./scripts/ft-E1CL6SL-H4D256-L96-MR2-0.sh
 ```
+Here `ft` means `fine-tune` and its following string points out the model architecture and corresponding running order.
+
 3. Optionally, you can download our pre-trained models for evaluation.
 
 | Architecture      | Acc. (MN) | ACC. (SO) | Code |
 | :----------- | :-----------: | :-----------: | :-----------: |
 | [E1CL8SL-H4D256-L128-MR2]( https://pan.baidu.com/s/1669S-tUXOgtdBwMOdoNhcQ?pwd=9wfb) | 92.48 | **90.72** | 9wfb |
 | [E1CL8SL-H6D384-L128-MR4](https://pan.baidu.com/s/1zcsOpd2m5MHVr7AicLj9Ug?pwd=v843) | **93.93** | 89.69 | v843 |
-
-Here `ft` means `fine-tune` and its following string points out the model architecture and corresponding running order.
 
 ### Few-shot Classification
 1. The performance of few-shot point cloud classification is tested on two datasets. We follow the `K-way, N-shot` convention to conduct the experiments.
