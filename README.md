@@ -10,7 +10,7 @@ expensive manual annotation and poor transferability of supervised methods.
 Among them, CrossPoint follows the contrastive learning framework and exploits 
 image and point cloud data for unsupervised point cloud understanding. Although the impressive performance is presented, 
 the unbalanced architecture makes it unnecessarily complex and inefficient. 
-For example, the image branch in CrossPoint is $\sim$8.3x heavier than the point cloud branch leading to higher 
+For example, the image branch in CrossPoint is ~8.3x heavier than the point cloud branch leading to higher 
 complexity and latency. To address this problem, in this paper, we propose a lightweight Vision-and-Pointcloud Transformer (ViPFormer) 
 to unify image and point cloud processing in a single architecture. ViPFormer learns in an unsupervised manner by optimizing 
 intra-modal and cross-modal contrastive objectives. Then the pretrained model is transferred to 
@@ -21,6 +21,7 @@ extensive ablation studies.
 
 ## Preparation
 ### Package Setup
+* Ubuntu 18.04
 * Python 3.7.11
 * PyTorch 1.11.0
 * CUDA 10.2
@@ -30,13 +31,15 @@ extensive ablation studies.
 * h5py 3.6.0
 * pueue & pueued 2.0.4
 
-### W&B Docker Setup
+### W&B Server Setup
 We track the model training and fine-tuning with W&B tools. The official W&B tools may be slow and unstable since 
-they are on remote servers, we install the local version by running the following command.
+they are on remote servers, we install the local version by running the following command. 
 
 ```shell
   docker run --rm -d -v wandb:/vol -p 28282:8080 --name wandb-local wandb/local:0.9.41
 ```
+
+If you do not have Docker installed on your computer before, referring to the [official document](https://docs.docker.com/engine/install/ubuntu/) to finish Docker installation on Ubuntu.
 
 ### Dataset Download
 Download the following datasets and extract them to the desired location on your computer. 
@@ -53,7 +56,7 @@ Download the following datasets and extract them to the desired location on your
 example, 
 
 ```shell
-  ./scripts/pt-E1CL6SL-H4D256-L96-MR2-0.sh
+  ./scripts/pretrain/pt-E1CL6SL-H4D256-L96-MR2-0.sh
 ```
 The filename of shell has specific meaning, `pt` refers to `pre-train`, and `E1CL6SL-H4D256-L96-MR2-0` specifies its architecture with 1 `cross-attention layer`, 6 `self-attention layer`, 4 `attention heads`, `model dimension` of 256, 96 `point or image patches`, `MLP ratio` of 2, and the ending `0` indicates the first run with this architecture. So we can ablate the model architecture by changing these parameters in the shell files. 
 
@@ -65,7 +68,7 @@ ModelNet40, ScanObjectNN and ShapeNetPart.
 2. We also provide the shell files to fine-tune the pre-trained model, for example, 
 
 ```
-  ./scripts/ft-E1CL6SL-H4D256-L96-MR2-0.sh
+  ./scripts/finetune/ft-E1CL6SL-H4D256-L96-MR2-0.sh
 ```
 Here `ft` means `fine-tune` and its following string points out the model architecture and corresponding running order.
 
@@ -82,7 +85,7 @@ Here `ft` means `fine-tune` and its following string points out the model archit
 2. We provide the running scripts, for example
 
 ```
-  ./scripts/eval_fewshot-MN.sh
+  ./scripts/fewshot/eval_fewshot-MN.sh
 ```
 
 In `eval_fewshot-MN.sh`, `MN` represents the ModelNet40 dataset. You can switch `MN` to `SO` to evaluate on ScanObjectNN.
