@@ -156,7 +156,7 @@ parser.add_argument('--category', type=str, default='Airplane', help='select cat
 parser.add_argument('--ballradius', type=int, default=10, help='ballradius')
 
 # wandb settings
-parser.add_argument('--wb_url', type=str, default="http://202.112.113.241:28282", help='wandb server url')
-parser.add_argument('--wb_key', type=str, default="local-9924b9666281a61be5d62b358e344c790f1c3954", help='wandb login key')
+parser.add_argument('--wb_url', type=str, default="http://localhost:28282", help='wandb server url')
+parser.add_argument('--wb_key', type=str, default="", help='find your login key from wandb web client')
 
 args = parser.parse_args()
