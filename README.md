@@ -27,9 +27,22 @@ extensive ablation studies.
 * CUDA 10.2
 * torchvision 0.12.0
 * wandb 0.12.11
+* lightly 1.1.21
 * einops 0.4.1
 * h5py 3.6.0
+* setuptools 59.5.0
 * pueue & pueued 2.0.4
+
+```shell
+  conda create -n vipformer python=3.7.11
+  codna activate vipformer
+
+  pip install torch==1.11.0+cu102 torchvision==0.12.0+cu102 --extra-index-url https://download.pytorch.org/whl/cu102
+  pip install -r requirements.txt
+```
+
+`pueue` is a shell command management software, we use it for scheduling the model pre-training & fine-tuning tasks, please refer to the [official page](https://github.com/Nukesor/pueue) for installation and basic usage. 
+We recommend it because you can run the experiments at scale with this tool thus save your time. 
 
 ### W&B Server Setup
 We track the model training and fine-tuning with W&B tools. The official W&B tools may be slow and unstable since 
