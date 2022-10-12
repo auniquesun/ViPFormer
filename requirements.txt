@@ -1,0 +1,8 @@
+wandb==0.12.11
+einops==0.4.1
+h5py==3.6.0
+lightly==1.1.21
+numpy==1.21.6
+scikit-learn==1.0.2
+setuptools==59.5.0
+jupyter==1.0.0
