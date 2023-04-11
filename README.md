@@ -49,6 +49,8 @@ We track the model training and fine-tuning with W&B tools. The official W&B too
 they are on remote servers, we install the local version by running the following command. 
 
 ```shell
+  sudo groupadd docker  # create `docker` group on Ubuntu
+  sudo usermod -aG docker <username>  # add <username> to `docker` group to use docker, replace <username> with yours
   docker run --rm -d -v wandb:/vol -p 28282:8080 --name wandb-local wandb/local:0.9.41
 ```
 
