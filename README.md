@@ -138,7 +138,7 @@ In `eval_fewshot-MN.sh`, `MN` represents the ModelNet40 dataset. You can switch 
 ## Citation
 If you find our paper and codebase are helpful for your research or project, please consider cite ViPFormer as follows.
 ```bibtex
-@inproceedings{sun22vipformer,
+@inproceedings{sun23vipformer,
   title={ViPFormer: Efficient Vision-and-Pointcloud Transformer for Unsupervised Pointcloud Understanding},
   author={Hongyu Sun, Yongcai Wang, Xudong Cai, Xuewei Bai and Deying Li},
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
