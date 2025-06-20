@@ -57,7 +57,7 @@ they are on remote servers, we install the local version by running the followin
 If you do not have Docker installed on your computer before, referring to the [official document](https://docs.docker.com/engine/install/ubuntu/) to finish Docker installation on Ubuntu.
 
 ### Dataset Download
-Download the following datasets from [this link](https://drive.google.com/drive/folders/1dAH9R3XDV0z69Bz6lBaftmJJyuckbPmR) and extract them to the desired location on your computer. 
+Download the following datasets from [our huggingface repo](https://huggingface.co/datasets/auniquesun/ViPFormer/tree/main) or from [this link](https://drive.google.com/drive/folders/1dAH9R3XDV0z69Bz6lBaftmJJyuckbPmR) and extract them to the desired location on your computer. 
 1. ShapeNetRender
 2. ModelNet40
 3. ScanObjectNN
