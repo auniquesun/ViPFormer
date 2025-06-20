@@ -57,11 +57,11 @@ they are on remote servers, we install the local version by running the followin
 If you do not have Docker installed on your computer before, referring to the [official document](https://docs.docker.com/engine/install/ubuntu/) to finish Docker installation on Ubuntu.
 
 ### Dataset Download
-Download the following datasets and extract them to the desired location on your computer. 
-1. [ShapeNetRender](https://drive.google.com/file/d/1F9XIhF1qngLt-GtdnOnXiTsXH84YtrbC/view?usp=sharing)
-2. [ModelNet40](https://drive.google.com/file/d/15lmtRaHvVIPLOp_o7rms8e6VQp_en8WF/view?usp=sharing)
-3. [ScanObjectNN](https://drive.google.com/file/d/15lmtRaHvVIPLOp_o7rms8e6VQp_en8WF/view?usp=sharing)
-4. [ShapeNetPart](https://drive.google.com/file/d/15lmtRaHvVIPLOp_o7rms8e6VQp_en8WF/view?usp=sharing)
+Download the following datasets from [this link](https://drive.google.com/drive/folders/1dAH9R3XDV0z69Bz6lBaftmJJyuckbPmR) and extract them to the desired location on your computer. 
+1. ShapeNetRender
+2. ModelNet40
+3. ScanObjectNN
+4. ShapeNetPart
 
 ## Usage
 ### Pre-train 
